@@ -1,0 +1,1049 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e67322;
+    --light-bg: #f4f7f6;
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+p{
+    margin-bottom: 15px;
+}   
+
+.btn{
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #d35400;
+}
+
+.btn-small{
+    background-color: var(--secondary-color);
+    padding: 8px 20px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--white);
+    transition: background-color 0.3s ease;
+}
+
+.btn-small:hover{
+    background-color: #2980b9;
+}
+
+header{
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a{
+    color: var(--white);
+    margin: 0 15px 0 15px;
+    padding: 0 8px 0 8px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover{
+    background-color: var(--light-bg);
+    color: var(--secondary-color);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.hero{
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.gamelab.id/uploads/modules/CompressJPEG.online_60kb_182387.jpg?1651031970844') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 0;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+}
+
+.hero h2{
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--white);
+    font-weight: 700;
+    animation: fadeInDown 1s ease-out forwards;
+    
+}
+
+.hero p{
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: var(--white);
+    animation: fadeIn 1.2s ease-out 0.6s forwards;
+}
+
+.hero .btn{
+    animation: fadeInUp 1.2s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.strategi-inti{
+    padding: 80px 0;
+    text-align: justify;
+    background-color: var(--white);
+}
+
+.strategi-inti h3{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.strategi-inti .subtitle{
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.strategi-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.strategi-master-detail{
+    display: flex;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    min-height: 600px;
+    margin-top: 50px;
+    transition: all 0.5s ease-in-out;
+}
+
+.strategi-list{
+    flex-basis: 100%;
+    padding: 30px;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.strategi-detail{
+    flex-basis: 0;
+    opacity: 0;
+    padding: 0;
+    overflow-y: auto;
+    transition: all 0.5s ease-in-out;
+    border-left: 1px solid #eee;
+}
+
+.strategi-detail .placeholder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #aaa;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px;
+}
+
+.strategi-detail .placeholder i{
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.strategi-master-detail.is-detail-view{
+    /*dibiarkan kosong*/
+}
+
+.strategi-master-detail.is-detail-view .strategi-list{
+    flex-basis: 40%;
+    padding: 20px;
+    border-right: 1px solid #eee;
+    overflow-y: auto;
+    background-color: var(--light-bg);
+}
+
+.strategi-master-detail.is-detail-view .strategi-detail{
+    flex-basis: 60%;
+    opacity: 1;
+    padding: 40px;
+}
+
+.strategi-master-detail.is-detail-view .card{
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    text-align: left;
+    gap: 15px;
+    border-bottom-width: 2px;
+}
+
+.strategi-master-detail.is-detail-view .card .icon{
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.strategi-master-detail.is-detail-view .card .read-more{
+    display: none;
+}
+
+.strategi-master-detail.is-detail-view .card p{
+    display: none;
+}
+
+.strategi-master-detail.is-detail-view .card h4{
+    margin-bottom: 0;
+    font-size: 1.2em;
+}
+
+.strategi-master-detail.is-detail-view .card.active{
+    background-color: var(--white);
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: scale(1.02);
+}
+
+.strategi-detail-content {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.strategi-detail-content img{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.strategi-detail-content h2{
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.strategi-detail-content p{
+    color: #444;
+    font-size: 1.05em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.strategi-detail-content  h5{
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.strategi-detail-content ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.strategi-detail-content ul li {
+    background-color: var(--light-bg);
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+
+.card{
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 4px solid var(--secondary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card .icon{
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.card h4{
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.card p{
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.card .read-more{
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.studi-kasus{
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--light-bg);
+}
+
+.studi-kasus h3{
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.case-studies-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.case-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; 
+}
+
+.case-item:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.case-item img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.case-item h4{
+    padding: 15px 20px 0;
+    font-size: 1.2em;
+}
+
+.case-item p{
+    padding: 0 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.case-item-summary {
+    padding: 0; /* Gambar akan mengisi dari ujung */
+    transition: all 0.4s ease;
+    text-align: center; /* Kembalikan text-align */
+}
+.case-item-summary img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 10px; /* Jaga lengkungan sudut */
+    border-top-right-radius: 10px;
+}
+.case-item-summary h4 {
+    padding: 15px 20px 0;
+    font-size: 1.2em;
+}
+.case-item-summary p {
+    padding: 0 20px;
+    font-size: 0.9em;
+    color: #666;
+    min-height: 80px; /* Samakan tinggi paragraf */
+}
+.case-item-summary .read-more {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* Tampilan Detail (Tersembunyi) */
+.case-item-detail {
+    max-height: 0; /* KUNCI: Awalnya tersembunyi */
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+    padding: 0 30px; /* Padding saat terbuka */
+}
+
+/* --- KETIKA KARTU AKTIF (DIKLIK) --- */
+
+.case-item.is-open {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* Sembunyikan summary saat terbuka */
+.case-item.is-open .case-item-summary {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    display: none; /* Pastikan benar-benar hilang */
+}
+
+/* Tampilkan detail saat terbuka */
+.case-item.is-open .case-item-detail {
+    max-height: 1500px; /* KUNCI: Set ke nilai besar */
+    opacity: 1;
+    padding-bottom: 30px;
+}
+
+
+/* --- Tampilan Detail Konten (Kita pinjam style dari Siklus TEFA) --- */
+/* Kita bisa pakai ulang kelas CSS yang sama agar hemat kode */
+
+.case-item-detail .detail-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #eee;
+}
+
+.case-item-detail .detail-header img {
+    width: 60px; /* Buat gambar mini */
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.case-item-detail .detail-header h4 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.case-item-detail .detail-body {
+    padding-top: 20px;
+    text-align: left;
+}
+/* Kita bisa pakai ulang style dari .proses-card-detail-body */
+.case-item-detail .detail-body p { 
+    font-size: 1em; 
+    color: #333; 
+    line-height: 1.7; 
+    margin-bottom: 25px; 
+}
+.case-item-detail .detail-body h5 { 
+    color: var(--secondary-color); 
+    font-size: 1.1em; margin-bottom: 10px; 
+    border-bottom: 2px solid var(--secondary-color); 
+    padding-bottom: 5px; 
+    display: inline-block; 
+}
+.case-item-detail .detail-body ul { 
+    list-style: none; 
+    padding-left: 0; 
+}
+.case-item-detail .detail-body ul li { 
+    background-color: var(--light-bg); 
+    margin-bottom: 8px; padding: 10px 15px; 
+    border-left: 4px solid var(--accent-color); 
+    border-radius: 4px; 
+    font-size: 0.95em; 
+    color: #555; 
+}
+
+.case-item .btn-small{
+    margin: 15px 20px 20px;
+    display: inline-block;
+}
+
+.proses-tefa{
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.proses-tefa h3{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.proses-tefa .subtitle{
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.proses-tefa{
+    padding: 80px 0;
+    text-emphasis: center;
+    background-color: var(--light-bg);
+}
+
+.proses-tefa h3{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.proses-tefa .subtitle{
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.proses-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.proses-card{
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 4px solid var(--secondary-color);
+    transition: all 1s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.proses-card-summary{
+    padding: 30px 25px;
+    transition: all 1s ease;
+}
+
+.proses-card-detail{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out, opacity 1s ease-out, padding 1s ease-out;
+    padding: 0 30px;
+}
+
+.proses-card.is-open{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.proses-card.is-open .proses-card-summary{
+    opacity: 0;
+    max-height: 0;
+    padding: 0 25px;
+    display: none;
+}
+
+.proses-card.is-open .proses-card-detail{
+    max-height: 1500px;
+    opacity: 1;
+    padding-bottom: 30px;
+    transition: max-height 1s ease-in, opacity 1s ease-in, padding 1s ease-in;
+}
+
+.proses-card-detail-header{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #eee;
+}
+
+.proses-card-detail-header .icon{
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    margin-right: 15px;
+}
+
+.proses-card-detail-header h4{
+    font-size: 1.3em;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.proses-card-detail-body{
+    padding-top: 20px;
+    text-align: left;
+}
+
+.proses-card-detail-body p{
+    font-size: 1em;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.proses-card-detail-body h5{
+    color: var(--secondary-color);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.proses-card-detail-body ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.proses-card-detail-body ul li{
+    background-color: var(--light-bg);
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border-left: 4px solid var(--accent-color);
+    font-size: 0.95em;
+    color: #555;
+}
+
+.proses-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.proses-card .icon{
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.proses-card h4{
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.proses-card p{
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.proses-card .read-more{
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin-top: 15px;
+}
+
+.proses-card .step-number{
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    font-size: 3em;
+    font-weight: 700;
+    color: rgba(0,0,0,0.1);
+    z-index: 0;
+}
+
+.proses-card .icon,
+.proses-card h4,
+.proses-card p,
+.proses-card .read-more{
+    position: relative;
+    z-index: 1;
+}
+
+.tefa-flow-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.flow-step{
+    background-color: var(--light-bg);
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.flow-step:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.flow-step .icon{
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.flow-step h4{
+    font-size: 1.2em;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.flow-arrow{
+    font-size: 2em;
+    color: var(--accent-color);
+    margin: 0 10px;
+}
+
+.proses-tefa .call-to-action{
+    margin-top: 50px;
+    font-size: 1.1em;
+    color: #555;
+    font-style: italic;
+}
+
+footer{
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer .social-links a{
+    color: var(--white);
+    margin: 0 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover{
+    color: var(--secondary-color);
+}
+
+.modal{
+    display: none;;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.modal.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content{
+    background-color: var(--white);
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.modal.active .modal-content{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.close-button{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding-top: 20px;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.modal-body h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.modal-body p {
+    color: #444;
+    font-size: 1.05em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.modal-points h5 {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.modal-points ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.modal-points ul li {
+    background-color: var(--light-bg);
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h2 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .strategi-inti h3,
+    .studi-kasus h3 {
+        font-size: 1.8em;
+    }
+
+    .strategy-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .close-button {
+        font-size: 24px;
+        top: 10px;
+        right: 15px;
+    }
+
+    .modal-body img {
+        margin-bottom: 15px;
+    }
+
+    .tefa-flow-container {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+        margin: 15px 0;
+    }
+
+    .proses-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;
+    }
+    nav ul li {
+        margin: 0 5px;
+    }
+    nav ul li a {
+        font-size: 0.9em;
+    }
+    .hero {
+        padding: 80px 0;
+    }
+    .hero h2 {
+        font-size: 1.8em;
+    }
+    .hero p {
+        font-size: 0.9em;
+    }
+    .strategi-inti h3,
+    .studi-kasus h3 {
+        font-size: 1.5em;
+    }
+    .card h4 {
+        font-size: 1.2em;
+    }
+    .card .icon {
+        font-size: 2.5em;
+    }
+    .modal-body h2 {
+        font-size: 1.5em;
+    }
+    .modal-body p {
+        font-size: 0.9em;
+    }
+    .modal-points h5 {
+        font-size: 1em;
+    }
+}
+
